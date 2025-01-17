@@ -1,0 +1,5 @@
+scripts:
+  runserver: uvicorn src.app.main:app --reload
+  installs: pip install -r requirements.txt
+  test: pytest src/tests.py
+  build: docker build -f Dockerfile -t serverless-py .

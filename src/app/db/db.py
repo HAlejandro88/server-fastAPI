@@ -15,6 +15,14 @@ DATABASE_URL = "postgresql+asyncpg://postgres:postgres@localhost:5432/foo"
 
 # Crear el motor asincrónico
 engine = create_async_engine(DATABASE_URL, echo=True, future=True)
+"""
+echo=True
+Descripción: Cuando se establece en True, este parámetro activa el modo "echo" del motor de SQLAlchemy. Esto significa que todas las consultas SQL que se envían a la base de datos se imprimirán en la consola. Es útil para la depuración, ya que te permite ver qué consultas se están ejecutando.
+Uso: Puedes establecerlo en False en producción para evitar la salida de consultas en la consola.
+future=True
+Descripción: Este parámetro habilita el modo futuro de SQLAlchemy, lo que significa que el motor se comportará de acuerdo con las futuras versiones de SQLAlchemy. Esto es útil si deseas utilizar características que se introducirá en versiones posteriores de SQLAlchemy.
+Uso: Al establecer future=True, puedes asegurarte de que tu código sea compatible con las futuras versiones de SQLAlchemy y que puedas aprovechar nuevas características y mejoras.
+"""
 
 # Crear la clase Base que utilizarán los modelos
 Base = declarative_base()

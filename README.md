@@ -67,3 +67,9 @@ Flujo:
 	1.	Primero, FastAPI ejecuta check_permissions para validar el rol del usuario.
 	2.	Luego, ejecuta get_db_connection para simular la conexión a la base de datos.
 	3.	Finalmente, si ambas dependencias son exitosas, la función get_admin_data se ejecuta, y puedes acceder a sus valores como parámetros (role_info y db_info).
+
+
+### Documentación de JWT
+[Repo](https://github.com/mabdullahadeel/fcc-fastapi-jwt/tree/main)
+[Explicación](https://www.freecodecamp.org/news/how-to-add-jwt-authentication-in-fastapi/)
+[tutorial](https://medium.com/@kevinkoech265/jwt-authentication-in-fastapi-building-secure-apis-ce63f4164eb2)

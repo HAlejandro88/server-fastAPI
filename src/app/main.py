@@ -8,7 +8,8 @@ from fastapi.exceptions import RequestValidationError
 #from src.app.db.db import init_db
 
 
-app = FastAPI()
+app = FastAPI(debug=True)
+#root_path="/api/v1"
 
 @app.middleware("http")
 async def custom_middleware(request: Request, call_next):
