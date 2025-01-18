@@ -1,14 +1,12 @@
 from fastapi import FastAPI, Request
-#from app.routes import router as user_router
-#from app.db import init_db
-
+from fastapi.responses import JSONResponse
 from src.app.books.routes.books_route import router as books_router
 from src.app.users.routes.user_route import router as user_router
 from fastapi.exceptions import RequestValidationError
 #from src.app.db.db import init_db
 
 
-app = FastAPI(debug=True)
+app = FastAPI()
 #root_path="/api/v1"
 
 @app.middleware("http")

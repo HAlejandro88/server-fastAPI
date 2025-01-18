@@ -28,14 +28,14 @@ async def get_users(db: AsyncSession = Depends(get_db)):
     users = result.scalars().all() 
     return users
 
-@router.post("/")
+@router.post("/", status_code=status.HTTP_201_CREATED)
 async def create_user(user:UserCreate, db: AsyncSession = Depends(get_db)):
     new_user = User(name=user.name, email=user.email, password=hash_pass(user.password))
     db.add(new_user)
     await db.commit()
     return {"message": "User created successfully"}
 
-@router.post("/login", response_model=TokenSchema) 
+@router.post("/login", response_model=TokenSchema, status_code=status.HTTP_201_CREATED) 
 async def login(form_data: UserLogin , db: AsyncSession = Depends(get_db)):
     query = await db.execute(select(User).where(User.email == form_data.email))
     user = query.scalar_one_or_none() 
