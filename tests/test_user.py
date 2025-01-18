@@ -14,4 +14,4 @@ def get_users():
     assert isinstance(response.json(), list)
     assert "name" in response.json()[0]  # Verifica que el primer usuario tenga un campo "name"
     assert "email" in response.json()[0]
-    assert response.json() > 0
+    assert len(response.json()) > 0 
